@@ -1,11 +1,15 @@
 import React from 'react';
-import {StyleSheet, Text, View, Button} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function Authentication(props) {
   return (
     <View style={styles.screen}>
       <Text style={styles.title}>Facebook Authentication</Text>
-      <Button title="Facebook Sign-In" onPress={props.onFacebookButtonPress} />
+      <TouchableOpacity
+        style={styles.loginButton}
+        onPress={props.onFacebookButtonPress}>
+        <Text style={styles.buttonText}>Facebook Sign In</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -20,4 +24,15 @@ const styles = StyleSheet.create({
     fontSize: 25,
     marginBottom: 30,
   },
+  loginButton: {
+    backgroundColor: '#4267B2',
+    color: '#fff',
+    paddingHorizontal: 30,
+    paddingVertical: 10,
+    borderRadius: 50
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 20
+  }
 });
