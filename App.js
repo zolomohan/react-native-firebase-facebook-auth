@@ -7,7 +7,7 @@ import Authentication from './screens/Authentication';
 export default function App() {
   const [authenticated, setAuthenticated] = useState(false);
 
-  async function onFacebookButtonPress() {
+  async function signIn() {
     try {
       // Attempt login with permissions
       const result = await LoginManager.logInWithPermissions([
@@ -49,5 +49,5 @@ export default function App() {
   if (authenticated) {
     return <Authenticated />;
   }
-  return <Authentication onFacebookButtonPress={onFacebookButtonPress} />;
+  return <Authentication signIn={signIn} />;
 }

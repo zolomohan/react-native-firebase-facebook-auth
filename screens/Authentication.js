@@ -5,9 +5,7 @@ export default function Authentication(props) {
   return (
     <View style={styles.screen}>
       <Text style={styles.title}>Facebook Authentication</Text>
-      <TouchableOpacity
-        style={styles.loginButton}
-        onPress={props.onFacebookButtonPress}>
+      <TouchableOpacity style={styles.loginButton} onPress={props.signIn}>
         <Text style={styles.buttonText}>Facebook Sign In</Text>
       </TouchableOpacity>
     </View>
@@ -29,10 +27,10 @@ const styles = StyleSheet.create({
     color: '#fff',
     paddingHorizontal: 30,
     paddingVertical: 10,
-    borderRadius: 50
+    borderRadius: 50,
   },
   buttonText: {
     color: '#fff',
-    fontSize: 20
-  }
+    fontSize: 20,
+  },
 });
